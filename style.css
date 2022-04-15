@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --color-gradient-violet: #B068E9;
+    --color-gradient-blue: #6463E7;
+    --color-text-bold: #1E1F36;
+    --color-text-hover: #F47B56;
+    --color-text-question: #4B4C5F;
+    --color-text-answer: #787887;
+    --color-spearator: #E8E8EA;
+}
+
+/* ------------------------------ DESKTOP VIEW --------------------------- */
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    min-height: 100vh;
+    padding: 0 2.4rem 0 2.4rem;
+    background: linear-gradient(180deg, var(--color-gradient-violet) 0%, var(--color-gradient-blue) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 92rem;
+    border-radius: 2.3rem;
+    background: url(images/bg-pattern-desktop.svg);
+    background-size: 96.4rem 94.4rem;
+    background-position: top -29.4rem left -57.6rem;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    display: flex;
+}
+
+/* ------------------- Desktop: Illustration Styles */
+
+.illustrations {
+    flex: 1;
+    overflow: hidden;
+}
+
+.illustration--woman-desktop {
+    max-width: 47.2rem;
+    margin-left: -8.4rem;
+    margin-top: 7rem;
+
+}
+
+.illustration--woman-mobile {
+    display: none;
+}
+
+.illustration--box-desktop {
+    width: 19.1rem;
+    position: absolute;
+    top: 20.6rem;
+    left: -9.5rem;
+}
+
+/* -------------------- Desktop: Accordion Styles ------------- */
+.accordion {
+    width: 44.5rem;
+    padding: 6.5rem 9.5rem 8.3rem 0;
+}
+
+.accordion__title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 4rem;
+    color: var(--color-text-bold);
+}
+
+.accordion__items {
+    margin-top: 1.9rem;
+    max-width: 35rem;
+}
+
+.accordion__item {
+    min-height: 5.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--color-spearator);
+}
+
+.accordion__item--shown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion__item--shown h2 {
+    font-size: 1.4;
+    font-weight: 400;
+    line-height: 1.7rem;
+    color: var(--color-text-question);
+}
+
+.accordion__item--shown:hover {
+    cursor: pointer;
+}
+
+.accordion__item--shown h2:hover {
+    color: var(--color-text-hover);
+}
+
+.accordion__item--hidden {
+    display: none;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    max-width: 31.9rem;
+    margin: 1rem 0 1.6rem 0;
+    color: var(--color-text-answer);
+}
+
+/* Class 'open' added/removed to the parent element with JS */
+.accordion__item.open .accordion__item--hidden {
+    display: block;
+}
+
+.accordion__item.open .accordion__item--shown {
+    margin-top: 1.6rem;
+}
+
+.accordion__item.open .accordion__item--shown h2{
+    font-weight: 700;
+    color: var(--color-text-bold);
+}
+
+.accordion__item.open img {
+    transform: rotate(0.5turn);
+}
+
+
+
+/* ----------------------------- MOBILE VIEW ----------------------------------- */
+
+@media only screen and (max-width: 900px) {
+    .card {
+        width: 32.7rem;
+        padding: 0 2.4rem 4.8rem 2.4rem;
+        margin-top: 14.8rem;
+        flex-direction: column;
+        background: url(images/bg-pattern-mobile.svg);
+        background-size: auto;
+        background-position: top 0 center;
+        background-repeat: no-repeat;
+        background-color: #fff;
+    }
+
+    /* ------------- Mobile: Illustration Styles -------------- */
+    
+    .illustrations {
+        flex: 1;
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .illustration--woman-desktop {
+        display: none;
+
+    }
+
+    .illustration--box-desktop {
+        display: none;
+    }
+    
+    .illustration--woman-mobile {
+        display: block;
+        margin-top: -10.8rem;
+        max-width: 23.7rem;
+    }
+    
+    /* ------------- Mobile: Accordion Styles -------------- */
+    .accordion {
+        width: 27.9rem;
+        margin-top: 6rem;
+        padding: 0;
+    }
+    
+    .accordion__title {
+        text-align: center;
+    }
+    
+    .accordion__items {
+        max-width: 27.9rem;
+    }
+
+    .accordion__item--shown {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .accordion__item--shown h2 {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+    
+    .accordion__item--hidden {
+        max-width: 27.9rem;
+        margin: 1.2rem 0 1.6rem 0;
+    }
+}
